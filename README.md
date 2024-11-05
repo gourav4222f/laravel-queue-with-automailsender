@@ -26,24 +26,35 @@ php artisan queue:work
 ```
 This will start processing jobs in the queue, including the email sending job.
 
-**Step 4: Environment Variables**
+**Step 4: Email Configuration**
 
 In the `.env` file, set the `MAIL_HOST` and `MAIL_PASSWORD` variables to your email server's settings. For example:
 ```
 MAIL_HOST=smtp.gmail.com
 MAIL_PASSWORD=your_email_password
 ```
-**Default Queue Driver**
+
+**Step 5: Queue Configuration**
 
 By default, the queue driver is set to `database`. This means that the queue will store jobs in the database. You can change this setting in the `.env` file by setting the `QUEUE_DRIVER` variable. For example, to use the `sync` driver, set:
 ```
 QUEUE_DRIVER=sync
 ```
+
+**Step 6: Database Migration**
+
+Run the following command to migrate the database:
+```
+php artisan migrate
+```
+This will create the necessary tables for the queue system.
+
 **GitHub**
 
 To clone this project from GitHub, use the following command:
 ```
-git clone https://github.com/your-github-username/project-name.git
+git clone https://github.com/gourav4222f/laravel-queue-with-automailsender
 ```
 
 After cloning, follow the steps above to set up and run the project.
+
